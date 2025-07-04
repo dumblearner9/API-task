@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapPost("/", HandlePostRequest);  // ← 関数名だけ指定してる
+app.MapPost("/", HandlePostRequest); 
 
 app.Run();
 
-// ここから下に関数定義しておけばOK
 IResult HandlePostRequest(RequestBody body, string? apiKey, ILogger<Program> logger)
 {
     if (apiKey != "hogehoge") return Results.Unauthorized();
