@@ -1,3 +1,0 @@
-curl -X POST "http://localhost:5055/?apiKey=hogehoge" \
-  -H "Content-Type: application/json" \
-  -d '{"question": "調子どう？"}'

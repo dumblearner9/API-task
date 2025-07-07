@@ -1,0 +1,44 @@
+Node-REDから送られるセンサーデータ(JSON形式)を受け取り、指定形式（例：DTDL風）に整形して返すWeb APIを作成する。
+
+参考 : https://zenn.dev/microsoft/articles/call-restapi-from-dotnet
+参考 : https://qiita.com/hqf00342/items/6dd97a99c5c46c14e0e4
+
+項目 内容
+開発環境 VSCode＋.NET SDKでのC#環境構築
+JSON処理 System.Text.Json や Newtonsoft.Json を使ったデシリアライズ・加工処理
+Web API ASP.NET CoreでのRESTエンドポイント作成（[HttpPost]）
+加工処理 データ整形や変換ロジック
+単体テスト xUnitによるService層テストの記述
+
+API要件
+
+・ POST /api/convert
+・ 入力形式 :
+{
+"sensorId": "ABC123",
+"temperature": 23.4,
+"humidity": 50,
+"timestamp": "2025-07-01T12:00:00Z"
+}
+
+・ 出力形式 :
+{
+"id": "ABC123",
+"data": {
+"temp_c": 23.4,
+"humidity_percent": 50
+},
+"receivedAt": "2025-07-01T12:00:00Z"
+}
+
+・ 追加仕様 :
+1) timestamp を日本時間に変換して返す
+2) センサ値が異常値（例：温度 > 100）なら警告フラグを追加
+
+・ テスト仕様
+1) 正常系データに対して期待値のJSONが返ってくるかをテスト
+入力データを複数用意し、テストすること
+2) 異常値や欠損値への対応（nullチェック、例外）
+
+参考資料
+https://zenn.dev/microsoft/articles/call-restapi-from-dotnet

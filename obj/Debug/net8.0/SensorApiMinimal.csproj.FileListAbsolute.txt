@@ -23,3 +23,4 @@
 /Users/bracer9/SensorApiMinimal/obj/Debug/net8.0/SensorApiMinimal.pdb
 /Users/bracer9/SensorApiMinimal/obj/Debug/net8.0/SensorApiMinimal.genruntimeconfig.cache
 /Users/bracer9/SensorApiMinimal/obj/Debug/net8.0/ref/SensorApiMinimal.dll
+/Users/bracer9/SensorApiMinimal/obj/Debug/net8.0/SensorApiMinimal.sourcelink.json
