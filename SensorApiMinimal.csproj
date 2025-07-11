@@ -6,4 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!-- ▼▼▼ このItemGroupブロックを丸ごと追加してください ▼▼▼ -->
+  <ItemGroup>
+    <!-- 
+      SensorApiMinimal.Tests ディレクトリは別プロジェクトなので、
+      このプロジェクトのコンパイル対象から除外します。
+      macOS/Linux環境を考慮し、パス区切り文字は'/'を使用します。
+    -->
+    <Compile Remove="SensorApiMinimal.Tests/**" />
+    <Content Remove="SensorApiMinimal.Tests/**" />
+    <EmbeddedResource Remove="SensorApiMinimal.Tests/**" />
+    <None Remove="SensorApiMinimal.Tests/**" />
+  </ItemGroup>
+  <!-- ▲▲▲ ここまで ▲▲▲ -->
+
 </Project>

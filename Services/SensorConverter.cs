@@ -17,7 +17,7 @@ public static class SensorConverter
                 Temp_c = input.Temperature,
                 Humidity_percent = input.Humidity
             },
-            ReceivedAt = jstTime.ToString("yyyy-MM-ddTHH:mm:ssK")
+            ReceivedAt = jstTime.ToString("yyyy-MM-ddTHH:mm:sszzz") 
         };
 
         if (input.Temperature > 100)
